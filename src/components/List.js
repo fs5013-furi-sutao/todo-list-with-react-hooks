@@ -3,7 +3,7 @@ import ListItem from './ListItem'
 import { DataContext } from './DataProvider'
 
 export default function List() {
-    const [todos, setTodos, checkAll, setCheckAll] = useContext(DataContext);
+    const [todos, setTodos, , setCheckAll] = useContext(DataContext);
 
     const switchComplete = id => {
         const newTodos = [...todos];

@@ -8,7 +8,7 @@ function App() {
     <DataProvider>
       <div className="App">
 
-        <h1><img src={`${process.env.PUBLIC_URL}/favicon.ico`} />To Do リスト</h1>
+        <h1><img src={`${process.env.PUBLIC_URL}/favicon.ico`} alt="To Do リスト" />To Do リスト</h1>
         <FormInput />
         <List />
         <Footer />

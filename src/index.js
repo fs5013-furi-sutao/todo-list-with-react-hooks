@@ -1,20 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Helmet>
-      <meta
-        name="description"
-        content="Context API と React Hook を使った ToDo タスクを管理する Web アプリ"
-      />
-      <title>ToDo リスト</title>
-    </Helmet>
-    <App />
+    <HelmetProvider>
+      <Helmet>
+        <meta
+          name="description"
+          content="Context API と React Hook を使った ToDo タスクを管理する Web アプリ"
+        />
+        <title>ToDo リスト</title>
+      </Helmet>
+      <App />
+    </HelmetProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

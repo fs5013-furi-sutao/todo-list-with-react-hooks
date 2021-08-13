@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.3",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^1.0.9"
   }
 }
