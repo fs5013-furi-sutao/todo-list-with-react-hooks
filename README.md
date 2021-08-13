@@ -1023,6 +1023,62 @@ export default function Footer() {
 }
 ```
 
-最後に動作確認をする
+次に、すべての ListItem にチェックが入れられたら、Footer のチェックボックスにチェックが入るようにしたい
 
-これで ToDo アプリは完成です
+そのために、DataProvider に checkAll と setCheckAll を登録する
+
+DataProvider.js 追記箇所
+``` javascript
+const [checkAll, setCheckAll] = useState(false);
+```
+
+DataProvider.js 変更箇所
+``` javascript
+<DataContext.Provider value={[todos, setTodos, checkAll, setCheckAll]}>
+```
+
+それに合わせて List.js と Footer.js も修正する
+
+List.js 追記箇所1
+``` javascript
+const [todos, setTodos, checkAll, setCheckAll] = useContext(DataContext);
+```
+
+List.js 追記箇所2
+``` javascript
+const switchComplete = id => {
+・・・
+    switchCheckAllMatchCheckboxesState();
+・・・
+};
+```
+
+List.js 追記処理
+``` javascript
+const countCheckedList = () => {
+    const newTodos = [...todos];
+    let count = 0;
+    newTodos.forEach((todo) => {
+        if (todo.complete) {
+            count++;
+        }
+    });
+    return count;
+};
+const switchCheckAllMatchCheckboxesState = () => {
+    if (countCheckedList() === todos.length) {
+        setCheckAll(true);
+        return;
+    }
+    setCheckAll(false);
+};
+```
+
+以下が Footer.js の修正箇所
+
+Footer.js 変更箇所
+``` javascript
+const [todos, setTodos, checkAll, setCheckAll] = useContext(DataContext);
+```
+
+最後に動作確認をする

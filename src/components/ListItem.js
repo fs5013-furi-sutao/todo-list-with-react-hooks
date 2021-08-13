@@ -35,7 +35,7 @@ export default function ListItem({ todo, id, checkComplete, handleEditTodos }) {
                     onChange={() => checkComplete(id)} />
                 {todo.name}
             </label>
-            <button disabled={todo.complete} onClick={handleOnEdit}>編集</button>
+            <button id="edit" disabled={todo.complete} onClick={handleOnEdit}>編集</button>
         </li>
     )
 }

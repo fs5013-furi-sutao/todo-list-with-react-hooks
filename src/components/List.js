@@ -3,7 +3,7 @@ import ListItem from './ListItem'
 import { DataContext } from './DataProvider'
 
 export default function List() {
-    const [todos, setTodos] = useContext(DataContext);
+    const [todos, setTodos, checkAll, setCheckAll] = useContext(DataContext);
 
     const switchComplete = id => {
         const newTodos = [...todos];
@@ -12,6 +12,7 @@ export default function List() {
                 todo.complete = !todo.complete;
             }
         });
+        switchCheckAllMatchCheckboxesState();
         setTodos(newTodos);
     };
 
@@ -24,6 +25,26 @@ export default function List() {
         });
         setTodos(newTodos);
     };
+
+    const countCheckedList = () => {
+        const newTodos = [...todos];
+        let count = 0;
+        newTodos.forEach((todo) => {
+            if (todo.complete) {
+                count++;
+            }
+        });
+        return count;
+    };
+
+    const switchCheckAllMatchCheckboxesState = () => {
+        if (countCheckedList() === todos.length) {
+            setCheckAll(true);
+            return;
+        }
+        setCheckAll(false);
+    };
+
     return (
         <ul>
             {

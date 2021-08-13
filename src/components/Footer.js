@@ -1,9 +1,8 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { DataContext } from './DataProvider'
 
 export default function Footer() {
-    const [checkAll, setCheckAll] = useState(false);
-    const [todos, setTodos] = useContext(DataContext);
+    const [todos, setTodos, checkAll, setCheckAll] = useContext(DataContext);
 
     const handleCheckAll = () => {
         const newTodos = [...todos];

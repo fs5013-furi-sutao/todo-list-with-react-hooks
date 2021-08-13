@@ -23,7 +23,7 @@ export default function FormInput() {
                 required placeholder="新しいタスクを登録してください"
                 value={todoName} onChange={e => setTodoName(e.target.value.toLowerCase())} />
 
-            <button type="submit">追加</button>
+            <button id="add" type="submit">追加</button>
         </form>
     )
 }

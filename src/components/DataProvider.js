@@ -3,6 +3,7 @@ import React, { useState, useEffect, createContext } from 'react'
 export const DataContext = createContext();
 
 export const DataProvider = (props) => {
+    const [checkAll, setCheckAll] = useState(false);
     const [todos, setTodos] = useState([]);
 
     useEffect(() => {
@@ -15,7 +16,7 @@ export const DataProvider = (props) => {
     }, [todos]);
 
     return (
-        <DataContext.Provider value={[todos, setTodos]}>
+        <DataContext.Provider value={[todos, setTodos, checkAll, setCheckAll]}>
             {props.children}
         </DataContext.Provider>
     )

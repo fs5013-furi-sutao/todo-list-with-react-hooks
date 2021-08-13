@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-weight: 600;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -67,6 +68,11 @@ ul li .active {
   text-decoration: line-through;
 }
 
+ul li input, .row input {
+  margin-right: 5px;
+  transform: translateY(1px);
+}
+
 ul li button, .row button {
   border: none;
   outline: none;
@@ -88,7 +94,12 @@ ul li button:disabled {
   margin-top: 20px;
 }
 
+#edit {
+  width: 6em;
+}
+
 .row #delete {
+  width: 8em;
   background: crimson;
 }
 
