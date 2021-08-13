@@ -113,6 +113,11 @@ label {
   }
 }
 
+h1 img {
+  height: 1em;
+  margin-right: 1em;
+}
+
 h2 {
   text-align: center;
   color: crimson;
