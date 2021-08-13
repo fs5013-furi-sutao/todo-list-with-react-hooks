@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "react-helmet": "^6.1.0"
   }
 }

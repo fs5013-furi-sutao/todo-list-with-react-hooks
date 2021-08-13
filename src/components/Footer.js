@@ -32,7 +32,7 @@ export default function Footer() {
                                 onChange={handleCheckAll} checked={checkAll} />
                             すべて
                         </label>
-                        <p>{newTodosComplete().length}個の ToDo があります</p>
+                        <p>未完タスク{newTodosComplete().length}個</p>
                         <button id="delete" onClick={deleteTodo}>削除</button>
                     </div>
             }
