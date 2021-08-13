@@ -25,7 +25,7 @@ export default function Footer() {
     return (
         <>
             {
-                todos.length === 0 ? <h2>おめでとう！ タスクがなくなりました</h2>
+                todos.length === 0 ? <h2>すべてのタスクを消化しました</h2>
                     : <div className="row">
                         <label htmlFor="all">
                             <input type="checkbox" name="all" id="all"
